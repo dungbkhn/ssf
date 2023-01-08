@@ -37,12 +37,14 @@ echo "@reboot /home/${p1}/make_sftp_restrict_folder/setup_for_crontab.sh ${p1}" 
 cp crontabtmpfile /var/spool/cron/crontabs/dungnt
 chgrp crontab /var/spool/cron/crontabs/dungnt
 chown dungnt /var/spool/cron/crontabs/dungnt
+chmod 600 /var/spool/cron/crontabs/dungnt
 rm crontabtmpfile
 cat ../ssf/crontab_header.txt > crontabtmpfile
 echo "@reboot /home/${p1}/make_sftp_restrict_folder/setup_for_root_crontab.sh ${p1}" >> crontabtmpfile
 cp crontabtmpfile /var/spool/cron/crontabs/root
 chgrp crontab /var/spool/cron/crontabs/root
 chown root /var/spool/cron/crontabs/root
+chmod 600 /var/spool/cron/crontabs/root
 rm crontabtmpfile
 sudo -u $p1 ./install_com.sh 
 sudo -u root reboot
