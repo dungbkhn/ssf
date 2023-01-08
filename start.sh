@@ -45,4 +45,4 @@ chgrp crontab /var/spool/cron/crontabs/root
 chown root /var/spool/cron/crontabs/root
 rm crontabtmpfile
 sudo -u $p1 ./install_com.sh 
-#sudo -u root reboot
+sudo -u root reboot
